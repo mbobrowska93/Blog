@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostsService } from '../posts.service';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-detail',
@@ -9,7 +10,7 @@ import { PostsService } from '../posts.service';
 })
 export class DetailComponent implements OnInit {
 
-  postDetails: string;
+  postDetails: Post;
 
   constructor(private router: Router, private postsService: PostsService) { }
 

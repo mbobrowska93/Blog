@@ -1,11 +1,12 @@
 <mat-list>
     <mat-list-item *ngFor="let post of myPostsArray">
-        <button class="listButton" (click)="showDetails(post.content)" >
+       <!-- <button class="listButton" (click)="showDetails(post.content)" > -->
+         <button class="listButton" (click)="showDetails(post)" >
             <mat-icon>favorite_border</mat-icon> &nbsp;
             {{post.title}}
          </button>
         
-    </mat-list-item>
+    </mat-list-item> 
 </mat-list>
 
 

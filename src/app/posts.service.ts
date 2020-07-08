@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class PostsService {
 
   postsArray: Post[] = [];
-  postDetails: string;
+  postDetails: Post;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -36,7 +36,7 @@ export class PostsService {
     const link1 = 'https://teacher-app.azurewebsites.net/articles';
     return this.http.post<Post>(link1, post);
   }
- showDetails(content: string){
+ showDetails(content: Post){
    this.postDetails = content;
  }
 

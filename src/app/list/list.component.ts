@@ -37,7 +37,7 @@ export class ListComponent implements OnInit {
   }
 
   // nie zrobilam tego poprzez pobranie z api przez id, bazowalam na pobranym wczesniej obiekcie - nie wiem jak inaczej
-  showDetails(content: string) {
+  showDetails(content: Post) {
     this.postsService.showDetails(content);
     this.router.navigateByUrl('/detail', {});
   }
