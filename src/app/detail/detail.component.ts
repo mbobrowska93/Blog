@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { PostsService } from '../posts.service';
 import { Post } from '../post';
 
@@ -12,10 +12,13 @@ export class DetailComponent implements OnInit {
 
   postDetails: Post;
 
-  constructor(private router: Router, private postsService: PostsService) { }
+  constructor(private router: Router, private postsService: PostsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.postDetails = this.postsService.returnDetails();
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.postsService.returnDetails(id).subscribe(data => {
+      this.postDetails = data;
+    });
   }
 
 }

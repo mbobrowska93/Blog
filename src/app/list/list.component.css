@@ -1,6 +1,15 @@
 .listButton{
-    width: 200px;
+    width: 500px;
     text-align: left;
     background-color: white;
     border: none;
+}
+
+.created{
+    font-size: 8px;
+    color: gray;
+}
+
+table{
+    width:100%;
 }

@@ -4,6 +4,11 @@
 }
 
 .buttonAdd{
-    margin-left: 100px;
+    margin-left: 20px;
     width: 100px;
+}
+
+.error{
+    color: red;
+    font-size: 10px;
 }

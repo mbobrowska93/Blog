@@ -20,13 +20,6 @@ export class PostsService {
     return this.http.get<Array<Post>>(link);
   }
 
-  writeOnTheList(e: string, f: string) {
-    // dostajemy zadanie i komentarz w postaci stringow, i w tej metodce musimy do niej stworzyc obiekt i mu te parametry dac
-    console.log(e, f);
-    const newPost: Post = new Post(e, f); // przekazanie nazwy dla nowego obiektu Task
-    this.postsArray.push(newPost);
-  }
-
   getData(): Post[] {
     return this.postsArray;
   }
@@ -36,11 +29,12 @@ export class PostsService {
     const link1 = 'https://teacher-app.azurewebsites.net/articles';
     return this.http.post<Post>(link1, post);
   }
- showDetails(content: Post){
+ showDetails(content: Post) {
    this.postDetails = content;
  }
 
- returnDetails(){
-   return this.postDetails;
+ returnDetails(id: number) {
+  const link2 = 'https://teacher-app.azurewebsites.net/articles/byId/' + id;
+  return this.http.get<Post>(link2);
  }
 }

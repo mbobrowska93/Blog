@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { PostsService } from '../posts.service';
 import { Post } from '../post';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add',
@@ -11,17 +12,30 @@ import { Post } from '../post';
 export class AddComponent implements OnInit {
 
   public post: Post;
+  registerForm: FormGroup;
+  submitted = false;
 
-  constructor(private router: Router, private postsService: PostsService) { }
+  constructor(private router: Router, private postsService: PostsService, private formBuilder: FormBuilder, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.post = { title: '', content: ''};
+    this.post = { id: 0, title: '', content: '', created: new Date() };
+    this.registerForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      content: ['', Validators.required]
+    });
   }
 
+  get f() { return this.registerForm.controls; }
+
   addPost(post: Post) {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
     this.postsService.addNewPost(post).subscribe(y => {
-      console.log('pobrany nowy post:', y);
+    console.log('pobrany nowy post:', y);
     });
+    this.router.navigateByUrl('/list', {}); // nie pokazuje dodanego postu od razu, trzeba wejsc ponownie i tak
   }
 
 }

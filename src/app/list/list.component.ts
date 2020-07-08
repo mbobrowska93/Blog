@@ -10,35 +10,26 @@ import { Post } from '../post';
 })
 export class ListComponent implements OnInit {
 
-  i: number;
-  arraySize: number;
-  post: Post;
+  page = 1;
+  totalRecords: string;
   myPostsArray: Post[] = [];
-  myPostDetails: string;
+  displayedColumns: string[] = ['title', 'created'];
+ 
 
   constructor(private router: Router, private postsService: PostsService) { }
 
   ngOnInit(): void {
+
     // pobranie postów z api
     this.postsService.getPost().subscribe(x => {
-      console.log('pobrane posty:', x);
-      this.arraySize = x.length;
-
-      for (this.i = 0; this.i < this.arraySize; this.i++) {
-        this.post = x[this.i];
-        // wyslanie postow do serwisu
-        this.postsService.writeOnTheList(this.post.title, this.post.content);
-      }
-      console.log('przykladowe:', this.myPostsArray);
+    this.myPostsArray = x;
     });
-
-    // pobranie postow z serwisu i wypisanie ich
-    this.myPostsArray = this.postsService.getData();
   }
 
-  // nie zrobilam tego poprzez pobranie z api przez id, bazowalam na pobranym wczesniej obiekcie - nie wiem jak inaczej
   showDetails(content: Post) {
     this.postsService.showDetails(content);
-    this.router.navigateByUrl('/detail', {});
+    this.router.navigateByUrl('/detail/' + content.id, {});
   }
+
 }
+
