@@ -1,7 +1,7 @@
 <h2><b>Add new post below:</b></h2>
 <form [formGroup]="registerForm">
     <input type="text" class="inputAdd" placeholder="Write title here..." [(ngModel)]="post.title" formControlName="title"
-        [ngClass]="{'is-invalid': submitted && f.title.errors}" autofocus> 
+        [ngClass]="{'is-invalid': submitted && f.title.errors}"> 
         <div *ngIf="submitted && f.title.errors">
             <div *ngIf="f.title.errors.required" class="error">To pole jest wymagane!</div>
         </div><br><br>

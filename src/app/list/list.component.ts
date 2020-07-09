@@ -45,5 +45,11 @@ export class ListComponent implements OnInit {
     this.router.navigateByUrl('/edit/' + post.id, {});
   }
 
+  deletePost(id: number) {
+    this.postsService.deletePost(id).subscribe(x => {
+      console.log(x);
+    });
+  }
+
 }
 

@@ -30,7 +30,7 @@ table{
   .edit {
     background-color: white;
     border: none;
-    margin-left: 10px;
+    margin-left: 20px;
 
   }
   
@@ -40,3 +40,17 @@ table{
       margin-left: 0px;
       color:grey;
     }
+
+    .delete {
+      background-color: white;
+      border: none;
+      margin-left: 0px;
+  
+    }
+    
+    .delete :hover{
+        background-color: white;
+        border: none;
+        margin-left: 0px;
+        color:grey;
+      }

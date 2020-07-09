@@ -39,8 +39,14 @@ export class PostsService {
  }
 
 
- updatePost(newPost: Post){
+ updatePost(newPost: Post) {
   const link3 = 'http://teacher-app.azurewebsites.net/articles/edit';
   return this.http.put<Post>(link3, newPost);
  }
+
+ deletePost(id: number) {
+  const link4 = 'http://teacher-app.azurewebsites.net/articles/byid/ ' + id;
+  return this.http.delete<Post>(link4);
+ }
+
 }

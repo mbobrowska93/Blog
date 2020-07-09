@@ -1,7 +1,9 @@
-<p>Here you can edit the selected post:</p>
+<h2><b>Here you can edit the selected post:</b></h2>
 
-<input type="text" class="inputEdit" placeholder="Write new title here..." [(ngModel)]="newPost.title" ><br><br>
-<input type="text" class="inputEdit" placeholder="Write new content here..." [(ngModel)]="newPost.content"><br><br>
-<button (click)="updatePost(newPost)">Update</button>
+<input type="text" class="inputEdit" placeholder="Write new title here..." [(ngModel)]="newPost.title"><br><br>
+
+<input type="text" class="inputEdit" placeholder="Write new content here..." [(ngModel)]="newPost.content">
+
+<mat-button-toggle (click)="updatePost(newPost)" class="buttonEdit">Update</mat-button-toggle>
 
 <router-outlet></router-outlet>

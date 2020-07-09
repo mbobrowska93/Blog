@@ -30,6 +30,7 @@
         <mat-cell *matCellDef="let element">
             <button class="row" (click)="showDetails(element)"><mat-icon>open_in_new</mat-icon></button>
             <button class="edit" (click)="editPost(element)"><mat-icon>edit</mat-icon></button>
+            <button class="delete" (click)="deletePost(element.id)"><mat-icon>delete_outline</mat-icon></button>
         </mat-cell>
     </ng-container>
 
