@@ -1,0 +1,7 @@
+<p>Here you can edit the selected post:</p>
+
+<input type="text" class="inputEdit" placeholder="Write new title here..." [(ngModel)]="newPost.title" ><br><br>
+<input type="text" class="inputEdit" placeholder="Write new content here..." [(ngModel)]="newPost.content"><br><br>
+<button (click)="updatePost(newPost)">Update</button>
+
+<router-outlet></router-outlet>

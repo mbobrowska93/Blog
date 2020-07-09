@@ -29,12 +29,18 @@ export class PostsService {
     const link1 = 'https://teacher-app.azurewebsites.net/articles';
     return this.http.post<Post>(link1, post);
   }
- showDetails(content: Post) {
+ /*showDetails(content: Post) {
    this.postDetails = content;
- }
+ }*/
 
  returnDetails(id: number) {
   const link2 = 'https://teacher-app.azurewebsites.net/articles/byId/' + id;
   return this.http.get<Post>(link2);
+ }
+
+
+ updatePost(newPost: Post){
+  const link3 = 'http://teacher-app.azurewebsites.net/articles/edit';
+  return this.http.put<Post>(link3, newPost);
  }
 }

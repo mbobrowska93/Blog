@@ -13,3 +13,30 @@
 table{
     width:100%;
 }
+
+.row {
+  background-color: white;
+  border: none;
+  margin-left: 0px;
+}
+
+.row :hover{
+    background-color: white;
+    border: none;
+    margin-left: 0px;
+    color:grey;
+  }
+
+  .edit {
+    background-color: white;
+    border: none;
+    margin-left: 10px;
+
+  }
+  
+  .edit :hover{
+      background-color: white;
+      border: none;
+      margin-left: 0px;
+      color:grey;
+    }
