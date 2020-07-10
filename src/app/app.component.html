@@ -1,30 +1,30 @@
-<div class="container p-3 my-3 border">
-
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <!-- Logo -->
-        <a class="navbar-brand">
-            <img src="https://www.onblastblog.com/wp-content/uploads/2017/08/blogger-logo.jpg" alt="logo"
-                style="width:120px; border:3px solid black">
-        </a>
-
-        <!-- Links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="add">ADD NEW POST</a>
-            </li> &nbsp;
-            <li class="nav-item">
-                <a class="nav-link" routerLink="list">LIST</a>
-            </li>
-        </ul>
 
 
 
-    </nav>
-
+    <mat-toolbar class="navbar">
+        <div>
+            <span>
+                <img src="https://www.onblastblog.com/wp-content/uploads/2017/08/blogger-logo.jpg" alt="logo"
+                    style="width:130px; border:1px solid black; margin-left: 0px">
+            </span>
+            <span>
+                <a class="link" routerLink="add">ADD NEW POST</a>
+            </span>
+            <span>
+                <a class="link" routerLink="list">LIST</a>
+            </span>
+        </div>
+        <div>
+            <mat-menu #appMenu="matMenu" >
+                <a routerLink="registration" class="submenu"><button mat-menu-item>Registration</button></a>
+                <a routerLink="signIn" class="submenu"><button mat-menu-item>Sign in</button></a>
+            </mat-menu>
+            <mat-icon class="menu" [matMenuTriggerFor]="appMenu">menu</mat-icon>
+        </div>
+    </mat-toolbar>
 
     <div class="container p-3 my-3 border">
         <router-outlet></router-outlet>
 
     </div>
 
-</div>

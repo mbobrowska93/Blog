@@ -34,8 +34,9 @@ export class AddComponent implements OnInit {
     }
     this.postsService.addNewPost(post).subscribe(y => {
     console.log('pobrany nowy post:', y);
+    this.router.navigateByUrl('/list', {}); 
+
     });
-    this.router.navigateByUrl('/list', {}); // nie pokazuje dodanego postu od razu, trzeba wejsc ponownie i tak
   }
 
 }

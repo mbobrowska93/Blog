@@ -27,8 +27,9 @@ export class EditComponent implements OnInit {
   updatePost(newPost: Post) {
     this.postsService.updatePost(newPost).subscribe(post => {
       console.log('edytowany post:', post);
+      this.router.navigateByUrl('/list', {});
     });
-    this.router.navigateByUrl('/list', {});
+
   }
 
 }

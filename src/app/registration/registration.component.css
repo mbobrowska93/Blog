@@ -1,16 +1,17 @@
-.inputAdd{
+.fields {
     width: 350px;
     height: 40px;
-}
-
-.buttonAdd{
-    /* margin-left: 20px; */
-    width: 100px;
-    background-color: #36454f;
-    color: white;
 }
 
 .error{
     color: red;
     font-size: 10px;
 }
+
+.registerButton, .resetButton{
+    width: 100px;
+    background-color: #36454f;
+    color: white;
+}
+
+

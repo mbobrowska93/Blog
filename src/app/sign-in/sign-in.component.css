@@ -1,0 +1,20 @@
+.fields {
+    width: 350px;
+    height: 40px;
+}
+
+.createButton{
+    width: 140px;
+    border: none;
+    background-color: white;
+}
+
+.createButton :hover{
+    color: #36454f;
+}
+
+.signButton{
+    width: 100px;
+    background-color: #36454f;
+    color: white; 
+}

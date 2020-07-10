@@ -1,4 +1,4 @@
-<h2><b>Add new post below:</b></h2>
+<h2 style="text-align:center"><b>Add new post</b></h2><br>
 <form [formGroup]="registerForm">
     <input type="text" class="inputAdd" placeholder="Write title here..." [(ngModel)]="post.title" formControlName="title"
         [ngClass]="{'is-invalid': submitted && f.title.errors}"> 
@@ -9,7 +9,7 @@
     [ngClass]="{'is-invalid': submitted && f.content.errors}" >
     <div *ngIf="submitted && f.content.errors">
         <div *ngIf="f.content.errors.required" class="error">To pole jest wymagane!</div>
-    </div> 
+    </div> <br><br>
     <mat-button-toggle (click)="addPost(post)" class="buttonAdd">Add</mat-button-toggle>
 </form>
 

@@ -1,0 +1,22 @@
+<h2 style="text-align:center"><b>Create an account</b></h2> <br>
+
+<form >
+    <input type="radio" name="account"> Private account  &nbsp; &nbsp;
+    <input type="radio" name="account"> Company account * <br><br>
+
+    <input type="text" class="fields" name="name" placeholder="First name & Last name *" [(ngModel)]="user.name" autofocus> <br><br>
+    <input type="text" class="fields" name="login" placeholder="Login *" [(ngModel)]="user.login">  <br><br>
+    <input type="email" class="fields" name="email" placeholder="E-mail adress *" [(ngModel)]="user.email"> <br><br>
+    <input type="password" class="fields" name="password" placeholder="Password *" [(ngModel)]="user.password"> <br><br>
+    <input type="date" class="fields" namer="date" [(ngModel)]="user.date"> <br><br>
+    <input type="radio"> &nbsp;
+    I agree to the processing of my personal data for marketing 
+    purposes and to receive commercial information from cooperating entities *
+    <br><br><br>
+    <mat-button-toggle class="registerButton" (click)="createAccount(user)">Create</mat-button-toggle> &nbsp;  <mat-button-toggle class="resetButton">Reset</mat-button-toggle>
+
+</form>
+
+
+
+<router-outlet></router-outlet>
