@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Post } from './post';
 import { Observable } from 'rxjs';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -29,9 +30,6 @@ export class PostsService {
     const link1 = 'https://teacher-app.azurewebsites.net/articles';
     return this.http.post<Post>(link1, post);
   }
- /*showDetails(content: Post) {
-   this.postDetails = content;
- }*/
 
  returnDetails(id: number) {
   const link2 = 'https://teacher-app.azurewebsites.net/articles/byId/' + id;
@@ -47,6 +45,11 @@ export class PostsService {
  deletePost(id: number) {
   const link4 = 'http://teacher-app.azurewebsites.net/articles/byid/ ' + id;
   return this.http.delete<Post>(link4);
+ }
+
+ register(user: User) {
+  const link5 = 'http://teacher-app.azurewebsites.net/user/register';
+  return this.http.post<User>(link5, user);
  }
 
 }

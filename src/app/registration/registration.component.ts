@@ -16,16 +16,20 @@ export class RegistrationComponent implements OnInit {
   constructor(private router: Router, private postsService: PostsService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-   this.user = { name: '', login: '', email: '', password: '', date: new Date() };
+    this.user = { login: '', password: '' };
   }
 
 
   createAccount(user: User) {     // dopracowac
-    if (user.name.length < 1 || user.login.length < 1 || user.password.length < 1 || user.email.length < 1) {
-      alert("Please, complete all fields!");
+    if (user.login.length < 1 || user.password.length < 1) {
+      alert('Please, complete all fields!');
     }
-    else{
+    else {
       console.log('uzytkownik:', user);
+      this.postsService.register(user).subscribe(y => {
+        console.log('zarejestrowany uzytkownik:', y);
+        this.router.navigateByUrl('/signIn', {});
+      });
     }
   }
 }
