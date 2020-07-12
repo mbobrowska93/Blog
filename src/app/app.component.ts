@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
+import { PostsService } from './posts.service';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'blog';
-  loginStatus: boolean;
+
+  constructor(private authService: AuthService, private postsService: PostsService) { }
+
 
   ngOnInit(): void {
-    // this.loginStatus = this.authService.isAuthenticated();
+    
   }
 
-  signOut() {
-    localStorage.clear();
-    window.location.reload(); // odświezenie strony
-  }
+
+
+
+
 
 }

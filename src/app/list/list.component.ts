@@ -18,7 +18,7 @@ export class ListComponent implements OnInit {
   totalRecords: string;
   myPostsArray: Post[] = [];
   loginStatus: boolean;
-
+  activeLogin: string;
   displayedColumns: string[] = ['title', 'created', 'details'];
 
   constructor(private router: Router, private postsService: PostsService, private authService: AuthService) { }
@@ -30,6 +30,8 @@ export class ListComponent implements OnInit {
       this.myPostsArray = x;
     });
     this.loginStatus = this.authService.isAuthenticated();
+    this.activeLogin = this.postsService.returnActiveLogin();
+    console.log('w app', this.activeLogin);
 
   }
 

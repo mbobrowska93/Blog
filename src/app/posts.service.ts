@@ -14,6 +14,7 @@ export class PostsService implements CanActivate {
 
   postsArray: Post[] = [];
   postDetails: Post;
+  login: string;
 
   constructor(private auth: AuthService, private http: HttpClient, private router: Router) { }
 
@@ -65,6 +66,15 @@ export class PostsService implements CanActivate {
     }
 
     return true;
+  }
+
+  writeUser(userLogin: string) {
+    this.login = userLogin;
+    console.log('w serwisie', this.login);
+  }
+
+  returnActiveLogin() {
+    return this.login;
   }
 
 }

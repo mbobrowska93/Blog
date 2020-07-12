@@ -1,20 +1,4 @@
-
-<!--
-    <mat-list *ngFor="let post of myPostsArray | paginate: { id: 'listing_pagination', itemsPerPage: 10, currentPage: page, totalItems: totalRecords}">
-    <mat-list-item >
-         <button class="listButton" (click)="showDetails(post)" >
-            <mat-icon>favorite_border</mat-icon> &nbsp;
-            {{post.title}} &nbsp; <span class="created">{{post.created}}</span>
-         </button>
-    </mat-list-item> 
-</mat-list>
-
-<div style="margin-top: 20px; text-align: center">
-    <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event">
-    </pagination-controls>
-</div>
--->
-
+<h3>You are logged in as: &nbsp; <b>{{activeLogin}}</b></h3>
 <mat-table [dataSource]="myPostsArray" class="mat-elevation-z8" matSort>
     <ng-container matColumnDef="title">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>

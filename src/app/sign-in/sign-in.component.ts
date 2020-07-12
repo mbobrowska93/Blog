@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostsService } from '../posts.service';
 import { User } from '../user';
@@ -12,6 +12,7 @@ export class SignInComponent implements OnInit {
 
   public user: User;
   invalidLogin: boolean;
+  
 
   constructor(private router: Router, private postsService: PostsService) { }
 
@@ -30,16 +31,15 @@ export class SignInComponent implements OnInit {
         let token = (response as any).token;
         localStorage.setItem('jwt', token); // zapis tokena w pamięci localStorage
         this.invalidLogin = false;
+        // window.location.reload();
+        this.postsService.writeUser(user.login);
         this.router.navigate(['/']);
+        
       },
       err => {
         this.invalidLogin = true;
       }
     );
-
-    /* (y => {
-      console.log('zalogowany uzytkownik:', y);
-    }); */
-
+      
   }
 }

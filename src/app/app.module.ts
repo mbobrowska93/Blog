@@ -11,6 +11,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -18,6 +19,7 @@ import { MaterialModule } from './material/material.module';
   declarations: [
     AppComponent,
     routingComponents,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

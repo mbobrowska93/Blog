@@ -6,6 +6,8 @@
 .buttonEdit{
     margin-left: 20px;
     width: 100px;
+    background-color: #36454f;
+    color: white;
 }
 
 .error{
