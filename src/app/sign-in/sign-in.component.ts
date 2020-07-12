@@ -10,12 +10,36 @@ import { User } from '../user';
 })
 export class SignInComponent implements OnInit {
 
+  public user: User;
+  invalidLogin: boolean;
+
   constructor(private router: Router, private postsService: PostsService) { }
 
   ngOnInit(): void {
+    this.user = { login: '', password: '' };
   }
 
   createAccount() {
     this.router.navigateByUrl('/registration', {});
+  }
+
+  signIn(user: User) {
+    console.log(user);
+    this.postsService.signIn(user).subscribe(
+      response => {
+        let token = (response as any).token;
+        localStorage.setItem('jwt', token); // zapis tokena w pamięci localStorage
+        this.invalidLogin = false;
+        this.router.navigate(['/']);
+      },
+      err => {
+        this.invalidLogin = true;
+      }
+    );
+
+    /* (y => {
+      console.log('zalogowany uzytkownik:', y);
+    }); */
+
   }
 }

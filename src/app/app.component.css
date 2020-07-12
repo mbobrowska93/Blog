@@ -21,3 +21,11 @@
     color: white;
     font-size: 15px;
 }
+
+.signOut {
+    width: 100px;
+    border: none;
+    background-color: #36454f;
+    color: white;
+    font-size: 15px;
+}

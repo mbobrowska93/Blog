@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'blog';
+  loginStatus: boolean;
+
+  ngOnInit(): void {
+    // this.loginStatus = this.authService.isAuthenticated();
+  }
+
+  signOut() {
+    localStorage.clear();
+    window.location.reload(); // odświezenie strony
+  }
+
 }

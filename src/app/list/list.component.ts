@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostsService } from '../posts.service';
+import { AuthService } from '../auth.service';
 import { Post } from '../post';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
@@ -16,38 +17,35 @@ export class ListComponent implements OnInit {
   page = 1;
   totalRecords: string;
   myPostsArray: Post[] = [];
+  loginStatus: boolean;
 
-  // dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = ['title', 'created', 'details'];
- 
-  constructor(private router: Router, private postsService: PostsService) { }
 
-   // @ViewChild (MatSort, {static: true}) sort: MatSort;
-   // @ViewChild(MatSort) sort: MatSort;
+  constructor(private router: Router, private postsService: PostsService, private authService: AuthService) { }
 
   ngOnInit(): void {
 
     // pobranie postów z api
     this.postsService.getPost().subscribe(x => {
-    this.myPostsArray = x;
+      this.myPostsArray = x;
     });
+    this.loginStatus = this.authService.isAuthenticated();
 
-   // this.dataSource = new MatTableDataSource(this.myPostsArray);
-    // this.dataSource.sort = this.sort;
   }
 
   showDetails(content: Post) {
-   // this.postsService.showDetails(content);
     this.router.navigateByUrl('/detail/' + content.id, {});
   }
 
   editPost(post: Post) {
+    console.log(this.loginStatus);
     this.router.navigateByUrl('/edit/' + post.id, {});
   }
 
   deletePost(id: number) {
     this.postsService.deletePost(id).subscribe(x => {
       console.log(x);
+      window.location.reload(); // odświezenie strony
     });
   }
 

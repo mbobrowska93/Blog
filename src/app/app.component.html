@@ -8,7 +8,7 @@
                     style="width:130px; border:1px solid black; margin-left: 0px">
             </span>
             <span>
-                <a class="link" routerLink="add">ADD NEW POST</a>
+                <a class="link" routerLink="add" >ADD NEW POST</a>
             </span>
             <span>
                 <a class="link" routerLink="list">LIST</a>
@@ -18,6 +18,7 @@
             <mat-menu #appMenu="matMenu" >
                 <a routerLink="registration" class="submenu"><button mat-menu-item>Registration</button></a>
                 <a routerLink="signIn" class="submenu"><button mat-menu-item>Sign in</button></a>
+                <a class="submenu"><button (click)="signOut()"  data-toggle="modal" data-target="#myModal" mat-menu-item>Sign out</button></a>
             </mat-menu>
             <mat-icon class="menu" [matMenuTriggerFor]="appMenu">menu</mat-icon>
         </div>
@@ -25,6 +26,18 @@
 
     <div class="container p-3 my-3 border">
         <router-outlet></router-outlet>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" style="text-align: center">Logged out correctly</h3>
+            </div>
+        </div>
 
     </div>
+</div>
 

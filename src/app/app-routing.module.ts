@@ -6,12 +6,13 @@ import { DetailComponent } from './detail/detail.component';
 import { EditComponent } from './edit/edit.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { PostsService } from './posts.service';
 
 const routes: Routes = [
   { path: 'list', component: ListComponent},
-  { path: 'add', component: AddComponent},
+  { path: 'add', component: AddComponent, canActivate: [PostsService]},
   { path: 'detail/:id', component: DetailComponent},
-  { path: 'edit/:id', component: EditComponent},
+  { path: 'edit/:id', component: EditComponent, canActivate: [PostsService]},
   { path: 'registration', component: RegistrationComponent},
   { path: 'signIn', component: SignInComponent},
   { path: '', redirectTo: '/list', pathMatch: 'full'},

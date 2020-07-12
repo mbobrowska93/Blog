@@ -26,11 +26,14 @@
         <mat-cell *matCellDef="let element"><span>{{element.created}}</span></mat-cell>
     </ng-container>
     <ng-container matColumnDef="details">
-        <mat-header-cell *matHeaderCellDef>Details &nbsp; Edit &nbsp; Delete</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>Details &nbsp; 
+            <div *ngIf="loginStatus">Edit &nbsp; Delete </div></mat-header-cell> 
         <mat-cell *matCellDef="let element">
             <button class="row" (click)="showDetails(element)"><mat-icon>open_in_new</mat-icon></button>
-            <button class="edit" (click)="editPost(element)"><mat-icon>edit</mat-icon></button>
-            <button class="delete" (click)="deletePost(element.id)"><mat-icon>delete_outline</mat-icon></button>
+            <div *ngIf="loginStatus">
+                <button class="edit" (click)="editPost(element)"><mat-icon>edit</mat-icon></button>
+                <button class="delete" (click)="deletePost(element.id)"><mat-icon>delete_outline</mat-icon></button>
+            </div>
         </mat-cell>
     </ng-container>
 

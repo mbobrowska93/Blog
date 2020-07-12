@@ -1,9 +1,9 @@
 <h2 style="text-align:center"><b>Sign in</b></h2> <br>
 
 <form >
-    <input type="text" class="fields" name="login" placeholder="Login" autofocus>  <br><br>
-    <input type="password" class="fields"name="password" placeholder="Password"> <br><br>
-    <mat-button-toggle class="signButton">Sign in</mat-button-toggle> &nbsp;
+    <input type="text" class="fields" name="login" placeholder="Login" autofocus [(ngModel)]="user.login">  <br><br>
+    <input type="password" class="fields"name="password" placeholder="Password" [(ngModel)]="user.password"> <br><br>
+    <mat-button-toggle class="signButton" (click)="signIn(user)">Sign in</mat-button-toggle> &nbsp;
     <br><br>
     You don't have an account? &nbsp; <button class="createButton" (click)="createAccount()"><b>CREATE ACCOUNT</b></button>
 
