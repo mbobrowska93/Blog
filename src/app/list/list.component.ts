@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter, Output, PipeTransform } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostsService } from '../posts.service';
 import { AuthService } from '../auth.service';
@@ -7,12 +7,13 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
 
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit{
 
   page = 1;
   totalRecords: string;
@@ -20,6 +21,7 @@ export class ListComponent implements OnInit {
   loginStatus: boolean;
   activeLogin: string;
   displayedColumns: string[] = ['title', 'created', 'details'];
+
 
   constructor(private router: Router, private postsService: PostsService, private authService: AuthService) { }
 
@@ -50,6 +52,8 @@ export class ListComponent implements OnInit {
       window.location.reload(); // odświezenie strony
     });
   }
+
+
 
 }
 

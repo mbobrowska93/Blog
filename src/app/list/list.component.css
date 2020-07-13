@@ -5,52 +5,45 @@
     border: none;
 }
 
-.created{
-    font-size: 8px;
-    color: #36454f;
-}
 
 table{
     width: 100%;
 }
 
-.row {
-  background-color: white;
-  border: none;
-  margin-left: 0px;
+
+.options{
+    background-color: white;
+    border: none;
+    margin-left: 5px;
 }
 
-.row :hover{
+.options :hover{
     background-color: white;
     border: none;
     margin-left: 0px;
     color:#36454f;
-  }
+}
 
-  .edit {
-    background-color: white;
-    border: none;
-    margin-left: 20px;
+li {
+  border: 1px solid lightgray;
+  padding: 15px;
+}
 
-  }
-  
-  .edit :hover{
-      background-color: white;
-      border: none;
-      margin-left: 0px;
-      color:#36454f;
-    }
+ol {
+  list-style-type: none;
+}
 
-    .delete {
-      background-color: white;
-      border: none;
-      margin-left: 0px;
-  
-    }
-    
-    .delete :hover{
-        background-color: white;
-        border: none;
-        margin-left: 0px;
-        color:#36454f;
-      }
+.frame {
+  float: right;
+}
+
+
+.created{
+  font-size: 10px;
+  color: #36454f;
+}
+
+.arrows {
+  background-color: white;
+  border: none;
+}

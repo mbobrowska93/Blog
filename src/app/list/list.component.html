@@ -1,4 +1,32 @@
 <h3>You are logged in as: &nbsp; <b>{{activeLogin}}</b></h3>
+
+<ol>
+    <li>
+        <b> <span style="margin-left: 5px;">Title </span>
+            <span style="margin-left: 55px;">Created</span>
+            <span style="float:right; margin-right: 35px;">Options</span></b>
+    </li>
+    <li *ngFor="let post of myPostsArray | paginate: { id: 'listing_pagination', itemsPerPage: 10, currentPage: page, totalItems: totalRecords }">
+        {{post.title}} &nbsp; &nbsp; &nbsp; <span class="created">{{post.created}} </span>
+        <span class="frame">
+            <button class="options" (click)="showDetails(post)"><mat-icon>open_in_new</mat-icon></button>
+            <button *ngIf="loginStatus" class="options" (click)="editPost(post)"><mat-icon>edit</mat-icon></button>
+            <button *ngIf="loginStatus" class="options" (click)="deletePost(post.id)"><mat-icon>delete_outline</mat-icon></button>
+        </span> 
+    </li>
+</ol>
+
+<div style="margin-top: 20px; text-align: center">
+    <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event">
+    </pagination-controls>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
+<!--
 <mat-table [dataSource]="myPostsArray" class="mat-elevation-z8" matSort>
     <ng-container matColumnDef="title">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
@@ -24,10 +52,5 @@
     <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
-
-
-
-
-<router-outlet></router-outlet>
-
+-->
 

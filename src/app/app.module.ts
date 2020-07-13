@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NgpSortModule } from 'ngp-sort-pipe';
+import { Pipe, PipeTransform } from '@angular/core';
+
 
 
 
@@ -29,7 +32,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     NgxPaginationModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    NgpSortModule,
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
