@@ -16,7 +16,7 @@ export class RegistrationComponent implements OnInit {
   constructor(private router: Router, private postsService: PostsService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.user = { login: '', password: '' };
+    this.user = { login: '', password: '', isAdmin: false };
   }
 
 

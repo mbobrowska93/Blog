@@ -31,6 +31,7 @@ li {
 
 ol {
   list-style-type: none;
+  width: 95%;
 }
 
 .frame {

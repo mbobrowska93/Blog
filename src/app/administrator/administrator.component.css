@@ -1,0 +1,31 @@
+ol {
+    list-style-type: none;
+    width: 650px;
+}
+
+li {
+    border: 1px solid lightgray;
+    padding: 15px;
+}
+.admin {
+    width: 100px;
+    padding-bottom: 15px;
+    float: right;
+    margin-right: 90px;
+}
+
+.change {
+    margin-left: 10px;
+}
+
+.adminButton {
+    background-color: white;
+    border: none;
+}
+
+.details {
+    float: right;
+    background-color: white;
+    border: none;
+}
+

@@ -77,4 +77,19 @@ export class PostsService implements CanActivate {
     return this.login;
   }
 
+  getUsers() {
+    const link7 = 'http://teacher-app.azurewebsites.net/user';
+    return this.http.get<Array<User>>(link7);
+  }
+
+  returnUserDetails(login: string) {
+    const link8 = 'http://teacher-app.azurewebsites.net/user/bylogin/' + login;
+    return this.http.get<User>(link8);
+  }
+
+  changeUserRights(newUser: User) {
+    const link9 = 'http://teacher-app.azurewebsites.net/user/edit';
+    return this.http.put<User>(link9, newUser);
+  }
+
 }

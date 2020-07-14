@@ -1,0 +1,13 @@
+<h2 style="text-align: center"><b>User {{userDetails.login}} details.</b></h2>
+
+<b>1. Login - </b> {{userDetails.login}} <br>
+<b>2. Administrator rights - </b> {{userDetails.isAdmin}} <br>
+     <span style="margin-left: 17px;">Change rights for this user: &nbsp;
+        <input type="button" value="True" class="buttonRights" (click)="trueRights()"> &nbsp;
+        <input type="button" value="False" class="buttonRights" (click)="falseRights()">
+    </span>
+
+<br>
+<b>3. Image - </b> ... <br>
+
+... and others

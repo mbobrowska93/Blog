@@ -14,6 +14,8 @@ import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgpSortModule } from 'ngp-sort-pipe';
 import { Pipe, PipeTransform } from '@angular/core';
+import { AdministratorComponent } from './administrator/administrator.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 
@@ -23,6 +25,8 @@ import { Pipe, PipeTransform } from '@angular/core';
     AppComponent,
     routingComponents,
     NavbarComponent,
+    AdministratorComponent,
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,

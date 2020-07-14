@@ -1,0 +1,18 @@
+<h2 style="text-align: center;"><b>Welcome to Administrator panel</b></h2> <br>
+
+<ol>
+    <li>
+        <b> <span style="margin-left: 5px;">User login </span>
+            <span style="margin-left: 240px;width: 200px;padding-bottom: 15px;">Administrator rights</span>
+            <span style="float: right">Details</span>
+        </b>
+            
+    </li>
+    <li *ngFor = "let user of myUsersArray">
+        {{user.login}} <span> <button class="details" (click)="showDetails(user)"><mat-icon>open_in_new</mat-icon></button></span><span class="admin">{{user.isAdmin}}</span>
+       
+    </li>
+</ol>
+
+<router-outlet></router-outlet>
+

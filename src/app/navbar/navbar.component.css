@@ -17,6 +17,15 @@
     text-decoration: none;
 }
 
+.panel{
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 5px;
+    font-size: 18px;
+}
+
 .submenu {
     color: white;
     font-size: 15px;
