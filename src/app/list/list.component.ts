@@ -32,8 +32,8 @@ export class ListComponent implements OnInit{
       this.myPostsArray = x;
     });
     this.loginStatus = this.authService.isAuthenticated();
-    this.activeLogin = this.postsService.returnActiveLogin();
-    console.log('w app', this.activeLogin);
+    // this.activeLogin = this.postsService.returnActiveLogin();
+    // console.log('w app', this.activeLogin);
 
   }
 
@@ -53,7 +53,18 @@ export class ListComponent implements OnInit{
     });
   }
 
+  isTheLogin(): boolean {
 
+    if ( localStorage.getItem('user') !== null) {
+      return true;
+    } else return false;
+  }
+
+  isUserAdmin(): boolean {
+    if (localStorage.getItem('role') === 'Admin') {
+      return true;
+    } else return false;
+  }
 
 }
 

@@ -6,21 +6,24 @@
                 style="width:130px; border:1px solid black; margin-left: 0px">
         </span>
         <span>
-            <a *ngIf="loginStatus" class="link" routerLink="add">ADD NEW POST</a>   <!--problem z powrotem przycisku po zalogowaniu-->
+            <a *ngIf="isTheLogin()" class="link" routerLink="add">ADD NEW POST</a>   <!--problem z powrotem przycisku po zalogowaniu-->
         </span>
         <span>
             <a class="link" routerLink="list">LIST</a>
         </span>
+
     </div>
     <div>
-        <span><a class="panel" routerLink="administrator">ADMINISTRATOR PANEL</a></span>
+        
+        <span><a *ngIf="isUserAdmin()" class="panel" routerLink="administrator" >ADMINISTRATOR PANEL</a></span>
         <mat-menu #appMenu="matMenu">
             <a routerLink="registration" class="submenu"><button mat-menu-item>Registration</button></a>
             <a routerLink="signIn" class="submenu"><button mat-menu-item>Sign in</button></a>
             <a class="submenu"><button (click)="signOut()" data-toggle="modal" data-target="#myModal" mat-menu-item>Sign
                     out</button></a>
         </mat-menu>
-        <mat-icon class="menu" [matMenuTriggerFor]="appMenu">menu</mat-icon>
+        <mat-icon class="menu" [matMenuTriggerFor]="appMenu">menu</mat-icon><br>
+        <span class="login" *ngIf="writeLoginOnScreen()"> Welcome, {{activeLogin}}!</span>
     </div>
 </mat-toolbar>
 

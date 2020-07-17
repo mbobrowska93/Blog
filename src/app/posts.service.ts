@@ -15,6 +15,8 @@ export class PostsService implements CanActivate {
   postsArray: Post[] = [];
   postDetails: Post;
   login: string;
+  userRights: boolean;
+  userRole: string;
 
   constructor(private auth: AuthService, private http: HttpClient, private router: Router) { }
 
@@ -68,14 +70,15 @@ export class PostsService implements CanActivate {
     return true;
   }
 
-  writeUser(userLogin: string) {
+ /* writeUser(userLogin: string) {
     this.login = userLogin;
-    console.log('w serwisie', this.login);
   }
 
   returnActiveLogin() {
     return this.login;
   }
+*/
+
 
   getUsers() {
     const link7 = 'http://teacher-app.azurewebsites.net/user';
@@ -91,5 +94,6 @@ export class PostsService implements CanActivate {
     const link9 = 'http://teacher-app.azurewebsites.net/user/edit';
     return this.http.put<User>(link9, newUser);
   }
+
 
 }

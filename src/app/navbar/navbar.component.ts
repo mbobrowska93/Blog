@@ -5,6 +5,7 @@ import { AuthService } from '../auth.service';
 import { Post } from '../post';
 
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -16,10 +17,12 @@ export class NavbarComponent implements OnInit {
   activeLogin: string;
 
 
+
   constructor(private router: Router, private postsService: PostsService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.loginStatus = this.authService.isAuthenticated();
+
   }
 
   signOut() {
@@ -27,4 +30,25 @@ export class NavbarComponent implements OnInit {
     window.location.reload(); // odświezenie strony
   }
 
+  isUserAdmin(): boolean {
+    if (localStorage.getItem('role') === 'Admin') {
+      return true;
+    } else return false;
+  }
+
+  isTheLogin(): boolean {
+
+    if ( localStorage.getItem('user') !== null) {
+      return true;
+    } else return false;
+  }
+
+  writeLoginOnScreen(): boolean {
+
+    if (localStorage.getItem('user') !== null) {
+      this.activeLogin = localStorage.getItem('user');
+      return true;
+    }
+    else return false;
+  }
 }
