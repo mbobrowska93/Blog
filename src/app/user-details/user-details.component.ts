@@ -14,6 +14,7 @@ export class UserDetailsComponent implements OnInit {
   userDetails: User;
   rights: boolean;
   userRights;
+  userOrAdmin: string;
 
   constructor(private router: Router, private postsService: PostsService, private route: ActivatedRoute) { }
 
@@ -26,11 +27,13 @@ export class UserDetailsComponent implements OnInit {
 
   trueRights()  {
     this.rights = true;
+    // this.userOrAdmin = 'YES';
     this.changeRights(this.rights);
   }
 
   falseRights() {
     this.rights = false;
+    // this.userOrAdmin = 'NO';
     this.changeRights(this.rights);
   }
 

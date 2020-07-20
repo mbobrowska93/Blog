@@ -14,12 +14,11 @@
 
     </div>
     <div>
-        
         <span><a *ngIf="isUserAdmin()" class="panel" routerLink="administrator" >ADMINISTRATOR PANEL</a></span>
         <mat-menu #appMenu="matMenu">
             <a routerLink="registration" class="submenu"><button mat-menu-item>Registration</button></a>
-            <a routerLink="signIn" class="submenu"><button mat-menu-item>Sign in</button></a>
-            <a class="submenu"><button (click)="signOut()" data-toggle="modal" data-target="#myModal" mat-menu-item>Sign
+            <a  routerLink="signIn" class="submenu" *ngIf="withoutLogin()"><button mat-menu-item>Sign in</button></a>
+            <a class="submenu" *ngIf="isTheLogin()"><button (click)="signOut()" data-toggle="modal" data-target="#myModal" mat-menu-item>Sign
                     out</button></a>
         </mat-menu>
         <mat-icon class="menu" [matMenuTriggerFor]="appMenu">menu</mat-icon><br>

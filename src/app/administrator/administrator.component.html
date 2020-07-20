@@ -8,11 +8,16 @@
         </b>
             
     </li>
-    <li *ngFor = "let user of myUsersArray">
-        {{user.login}} <span> <button class="details" (click)="showDetails(user)"><mat-icon>open_in_new</mat-icon></button></span><span class="admin">{{user.isAdmin}}</span>
-       
+    <li *ngFor = "let user of myUsersArray"  >
+        {{user.login}} <span> <button class="details" (click)="showDetails(user)">
+            <mat-icon>open_in_new</mat-icon></button></span>
+            <span class="admin" [ngClass]="{true: user.isAdmin === true, false: user.isAdmin === false}" *ngIf="user.isAdmin === true">YES</span>
+            <span class="admin" [ngClass]="{true: user.isAdmin === true, false: user.isAdmin === false}" *ngIf="user.isAdmin === false">NO</span>
+
     </li>
 </ol>
+
+
 
 <router-outlet></router-outlet>
 

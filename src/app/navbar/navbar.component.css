@@ -8,6 +8,7 @@
     color: white;
     padding-right: 5px;
     cursor: pointer;
+    float: right;
 }
 
 .link{

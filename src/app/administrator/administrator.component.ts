@@ -11,6 +11,8 @@ import { User } from '../user';
 export class AdministratorComponent implements OnInit {
 
   myUsersArray: User[] = [];
+  status: string;
+  rights: string;
 
   constructor(private router: Router, private postsService: PostsService) { }
 
@@ -25,5 +27,14 @@ export class AdministratorComponent implements OnInit {
   showDetails(user: User) {
       this.router.navigateByUrl('/userDetails/' + user.login, {});
   }
+
+  /* isUserAdmin(trueOrFalse: string) {
+    console.log(trueOrFalse);
+    if (trueOrFalse === 'false') {
+      this.rights = 'NO';
+    }
+    else this.rights = 'YES';
+  }
+   */
 
 }

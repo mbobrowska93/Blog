@@ -43,12 +43,20 @@ export class NavbarComponent implements OnInit {
     } else return false;
   }
 
+  withoutLogin(): boolean {
+
+    if ( localStorage.getItem('user') == null) {
+      return true;
+    } else return false;
+  }
+
   writeLoginOnScreen(): boolean {
 
     if (localStorage.getItem('user') !== null) {
       this.activeLogin = localStorage.getItem('user');
       return true;
-    }
-    else return false;
+    } else return false;
   }
+
+
 }
