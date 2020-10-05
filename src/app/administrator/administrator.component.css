@@ -1,6 +1,7 @@
 ol {
     list-style-type: none;
     width: 650px;
+    margin-top: 25px;
 }
 
 li {
@@ -37,6 +38,23 @@ li {
     color: red;
 }
 
+.login {
+    margin-left: 5px;
+}
+
+.rights {
+    margin-left: 240px;
+    width: 200px;
+    padding-bottom: 15px;
+}
+
+.options {
+    float: right;
+}
+
+.panel {
+    text-align: center;
+}
 
 
 

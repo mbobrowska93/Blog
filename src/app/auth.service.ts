@@ -7,7 +7,7 @@ export class AuthService {
 
   constructor() { }
 
-  public isAuthenticated(): boolean { // sprawdzenie czy uzytkownik sie faktycznie zalogowal
+  public isAuthenticated(): boolean {
 
     const token = localStorage.getItem('jwt');
     return !!token;

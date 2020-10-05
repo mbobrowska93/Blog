@@ -27,13 +27,13 @@ export class AddComponent implements OnInit {
 
   get f() { return this.registerForm.controls; }
 
-  addPost(post: Post) {
+  addPost(post: Post): void {
     this.submitted = true;
     if (this.registerForm.invalid) {
       return;
+
     }
     this.postsService.addNewPost(post).subscribe(y => {
-    console.log('pobrany nowy post:', y);
     this.router.navigateByUrl('/list', {});
 
     });

@@ -31,34 +31,33 @@ export class PostsService implements CanActivate {
 
   addNewPost(post: Post) {
     console.log('post:', post);
-    const link1 = 'https://teacher-app.azurewebsites.net/articles';
-    return this.http.post<Post>(link1, post);
+    const link = 'https://teacher-app.azurewebsites.net/articles';
+    return this.http.post<Post>(link, post);
   }
 
   returnDetails(id: number) {
-    const link2 = 'https://teacher-app.azurewebsites.net/articles/byId/' + id;
-    return this.http.get<Post>(link2);
+    const link = 'https://teacher-app.azurewebsites.net/articles/byId/' + id;
+    return this.http.get<Post>(link);
   }
 
-
   updatePost(newPost: Post) {
-    const link3 = 'http://teacher-app.azurewebsites.net/articles/edit';
-    return this.http.put<Post>(link3, newPost);
+    const link = 'http://teacher-app.azurewebsites.net/articles/edit';
+    return this.http.put<Post>(link, newPost);
   }
 
   deletePost(id: number) {
-    const link4 = 'http://teacher-app.azurewebsites.net/articles/byid/ ' + id;
-    return this.http.delete<Post>(link4);
+    const link = 'http://teacher-app.azurewebsites.net/articles/byid/ ' + id;
+    return this.http.delete<Post>(link);
   }
 
   register(user: User) {
-    const link5 = 'http://teacher-app.azurewebsites.net/user/register';
-    return this.http.post<User>(link5, user);
+    const link = 'http://teacher-app.azurewebsites.net/user/register';
+    return this.http.post<User>(link, user);
   }
 
   signIn(user: User) {
-    const link6 = 'http://teacher-app.azurewebsites.net/user/login';
-    return this.http.post<User>(link6, user);
+    const link = 'http://teacher-app.azurewebsites.net/user/login';
+    return this.http.post<User>(link, user);
   }
 
   canActivate(): boolean {
@@ -70,29 +69,19 @@ export class PostsService implements CanActivate {
     return true;
   }
 
- /* writeUser(userLogin: string) {
-    this.login = userLogin;
-  }
-
-  returnActiveLogin() {
-    return this.login;
-  }
-*/
-
-
   getUsers() {
-    const link7 = 'http://teacher-app.azurewebsites.net/user';
-    return this.http.get<Array<User>>(link7);
+    const link = 'http://teacher-app.azurewebsites.net/user';
+    return this.http.get<Array<User>>(link);
   }
 
   returnUserDetails(login: string) {
-    const link8 = 'http://teacher-app.azurewebsites.net/user/bylogin/' + login;
-    return this.http.get<User>(link8);
+    const link = 'http://teacher-app.azurewebsites.net/user/bylogin/' + login;
+    return this.http.get<User>(link);
   }
 
   changeUserRights(newUser: User) {
-    const link9 = 'http://teacher-app.azurewebsites.net/user/edit';
-    return this.http.put<User>(link9, newUser);
+    const link = 'http://teacher-app.azurewebsites.net/user/edit';
+    return this.http.put<User>(link, newUser);
   }
 
 

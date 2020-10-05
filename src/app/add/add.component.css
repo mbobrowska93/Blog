@@ -3,13 +3,16 @@
     height: 40px;
     border: 1px solid lightgray;
     border-radius: 4px;
+    margin-top: 15px;
+    display: block;
 }
 
 .buttonAdd{
-    /* margin-left: 20px; */
+
     width: 100px;
     background-color: #36454f;
     color: white;
+    margin-top: 15px;
 }
 
 .error{

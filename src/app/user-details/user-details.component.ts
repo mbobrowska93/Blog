@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { PostsService } from '../posts.service';
-import { Post } from '../post';
 import { User } from '../user';
 
 @Component({
@@ -16,7 +15,7 @@ export class UserDetailsComponent implements OnInit {
   userRights;
   userOrAdmin: string;
 
-  constructor(private router: Router, private postsService: PostsService, private route: ActivatedRoute) { }
+  constructor(private postsService: PostsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const login = this.route.snapshot.paramMap.get('login');
@@ -27,13 +26,11 @@ export class UserDetailsComponent implements OnInit {
 
   trueRights()  {
     this.rights = true;
-    // this.userOrAdmin = 'YES';
     this.changeRights(this.rights);
   }
 
   falseRights() {
     this.rights = false;
-    // this.userOrAdmin = 'NO';
     this.changeRights(this.rights);
   }
 

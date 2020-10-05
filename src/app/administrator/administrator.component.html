@@ -1,10 +1,10 @@
-<h2 style="text-align: center;"><b>Welcome to Administrator panel</b></h2> <br>
+<h2 class="panel"><b>Welcome to Administrator panel</b></h2>
 
 <ol>
     <li>
-        <b> <span style="margin-left: 5px;">User login </span>
-            <span style="margin-left: 240px;width: 200px;padding-bottom: 15px;">Administrator rights</span>
-            <span style="float: right">Details</span>
+        <b> <span class="login">User login </span>
+            <span class="rights">Administrator rights</span>
+            <span class="options">Details</span>
         </b>
             
     </li>
@@ -13,6 +13,7 @@
             <mat-icon>open_in_new</mat-icon></button></span>
             <span class="admin" [ngClass]="{true: user.isAdmin === true, false: user.isAdmin === false}" *ngIf="user.isAdmin === true">YES</span>
             <span class="admin" [ngClass]="{true: user.isAdmin === true, false: user.isAdmin === false}" *ngIf="user.isAdmin === false">NO</span>
+
 
     </li>
 </ol>

@@ -17,7 +17,6 @@ export class AdministratorComponent implements OnInit {
   constructor(private router: Router, private postsService: PostsService) { }
 
   ngOnInit(): void {
-        // pobranie wszystkich uzytkownikow z api
         this.postsService.getUsers().subscribe(x => {
           this.myUsersArray = x;
           console.log(this.myUsersArray);
@@ -27,14 +26,5 @@ export class AdministratorComponent implements OnInit {
   showDetails(user: User) {
       this.router.navigateByUrl('/userDetails/' + user.login, {});
   }
-
-  /* isUserAdmin(trueOrFalse: string) {
-    console.log(trueOrFalse);
-    if (trueOrFalse === 'false') {
-      this.rights = 'NO';
-    }
-    else this.rights = 'YES';
-  }
-   */
 
 }

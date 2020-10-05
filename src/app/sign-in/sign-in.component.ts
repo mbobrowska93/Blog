@@ -31,13 +31,12 @@ export class SignInComponent implements OnInit {
     this.postsService.signIn(user).subscribe(
       response => {
         let token = (response as any).token;
-        localStorage.setItem('jwt', token); // zapis tokena w pamięci localStorage
-        this.decodedToken = jwt_decode(token); // rozkodowanie tokena
-        console.log(this.decodedToken.role); // role: User or Admin ?
-        localStorage.setItem('role', this.decodedToken.role); // zapis role w pamieci localStorage
+        localStorage.setItem('jwt', token);
+        this.decodedToken = jwt_decode(token);
+        console.log(this.decodedToken.role);
+        localStorage.setItem('role', this.decodedToken.role);
         this.invalidLogin = false;
-        // this.postsService.writeUser(user.login);
-        localStorage.setItem('user', user.login); // zapis procesu zalogowania w localStorage
+        localStorage.setItem('user', user.login);
         this.router.navigate(['/']);
 
       },
@@ -45,6 +44,5 @@ export class SignInComponent implements OnInit {
         this.invalidLogin = true;
       }
     );
-      
   }
 }

@@ -1,4 +1,3 @@
-<!-- <h3>You are logged in as: &nbsp; <b>{{activeLogin}}</b></h3> -->
 <ol>
     <li>
         <b> <span style="margin-left: 5px;">Title </span>
@@ -22,34 +21,4 @@
 
 <router-outlet></router-outlet>
 
-
-
-
-<!--
-<mat-table [dataSource]="myPostsArray" class="mat-elevation-z8" matSort>
-    <ng-container matColumnDef="title">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
-        <mat-cell *matCellDef="let element "> {{element.title}}
-        </mat-cell>
-    </ng-container> 
-    <ng-container matColumnDef="created">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Created</mat-header-cell>
-        <mat-cell *matCellDef="let element"><span>{{element.created}}</span></mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="details">
-        <mat-header-cell *matHeaderCellDef>Details &nbsp; 
-            <div *ngIf="loginStatus">Edit &nbsp; Delete </div></mat-header-cell> 
-        <mat-cell *matCellDef="let element">
-            <button class="row" (click)="showDetails(element)"><mat-icon>open_in_new</mat-icon></button>
-            <div *ngIf="loginStatus">
-                <button class="edit" (click)="editPost(element)"><mat-icon>edit</mat-icon></button>
-                <button class="delete" (click)="deletePost(element.id)"><mat-icon>delete_outline</mat-icon></button>
-            </div>
-        </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
--->
 
